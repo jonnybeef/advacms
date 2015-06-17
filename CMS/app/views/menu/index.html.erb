@@ -1,10 +1,20 @@
 <h1>Seafood Shack</h1>
 <body>
 
+    <tbody>
 	<p>Find me in app/views/menu/index.html.erb</p>
 	 <% @items.each_with_index do |item, i| %>
 	 <tr>
 	 	<td><%= item['Item'] %></td>
+	 	<td><%= item['Item_Menu'] %></td>
+	 	<td><%= item['Description'] %></td>
+	 	<% id = item['_id'] %>
+	 	<% item = item['Item'] %>
+	 	<% item_menu = item['Item_Menu'] %>
+	 	<% description = item['Description'] %>
+	 	<td><%= link_to "Delete", menu_delete_path("#{id},#{item},#{item_menu},#{description}")%></td>
+	 	<br />
+	 	
 	 </tr>
 	 <% end %>
 </body>
