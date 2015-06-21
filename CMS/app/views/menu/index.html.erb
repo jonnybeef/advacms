@@ -8,11 +8,10 @@
 	 	<td><%= item['Item'] %></td>
 	 	<td><%= item['Item_Menu'] %></td>
 	 	<td><%= item['Description'] %></td>
+	 	<td><%= item['_id'] %></td>
 	 	<% id = item['_id'] %>
-	 	<% item = item['Item'] %>
-	 	<% item_menu = item['Item_Menu'] %>
-	 	<% description = item['Description'] %>
-	 	<td><%= link_to "Delete", menu_delete_path("#{id},#{item},#{item_menu},#{description}")%></td>
+
+	 	<td><%= link_to "Delete", menu_delete_path(:id => "#{id}")%></td>
 	 	<br />
 	 	
 	 </tr>
